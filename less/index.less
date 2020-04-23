@@ -49,11 +49,92 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+@theme-color: lightgreen;
+@hover-color: white;
+@base-font: 1em;
+/** mix in **/
+
+.flex-center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: lightblue;
+	
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: @base-font;
 }
 
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	p{
+		padding: 40px;
+	}
+	img {
+		width: 500px;
+		height: 400px;
+		border: solid grey;
+	}
+}
+
+header { 
+	padding: 2%;
+	background-color: @theme-color;
+	
+	.topnav { 
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: center;
+	  align-items: center;
+	  background-color: @theme-color;
+	  
+	 
+	  @media ( max-width: 500px ) {
+		.flex-center() {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		  }
+	  }
+	
+	  a { 
+		color: black;
+		text-align: center;
+		align-content: space-around;
+		font-size: 2em;
+		padding-left: 15px;
+		background-color: @theme-color;
+		} 
+	  
+	  a:hover {
+		color: @hover-color;
+	  }
+	} 
+  } 
+  .title {
+	  padding-top: 30px;
+	  font-size: 3em;
+	  text-align: center;
+	  
+  }
+
+  h2 {
+	font-size: 2em;
+}
+
+footer {
+	text-align: center;
+	border: dotted black;
+}
